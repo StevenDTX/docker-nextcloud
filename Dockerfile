@@ -29,7 +29,6 @@ RUN \
 	samba-dev \
 	zlib-dev && \
 
-# install runtime packages
  apk add --no-cache \
 	curl \
 	ffmpeg \
@@ -66,7 +65,6 @@ RUN \
 	tar \
 	unzip && \
 
-# iconv fix
  apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
 
 
