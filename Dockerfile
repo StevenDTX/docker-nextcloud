@@ -66,10 +66,8 @@ RUN \
 	tar \
 	unzip && \
 
-# apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing \
-# 	gnu-libiconv && \
-
-
+ apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing \
+ 	gnu-libiconv && \
 
 # fetch php smbclient source
  git clone git://github.com/eduardok/libsmbclient-php.git /tmp/smbclient && \
