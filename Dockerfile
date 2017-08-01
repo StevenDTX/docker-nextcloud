@@ -12,8 +12,6 @@ ENV NEXTCLOUD_VER="12.0.0"
 # environment settings
 ENV NEXTCLOUD_PATH="/config/www/nextcloud"
 
-#iconv fix
-ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
 
 # install build-dependencies
 RUN \
@@ -65,8 +63,11 @@ RUN \
 	tar \
 	unzip && \
 
- apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
+ apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing \
+ 	gnu-libiconv && \
 
+#iconv fix
+ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
 
 # fetch php smbclient source
  git clone git://github.com/eduardok/libsmbclient-php.git /tmp/smbclient && \
